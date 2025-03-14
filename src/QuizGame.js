@@ -7,8 +7,10 @@ const questions = [
     options: ["Golden Hour", "Song 2", "Imagine", "Bohemian Rhapsody"],
     correct: "Golden Hour",
     messages: {
-      correct: "Correct! not sure tho is this still your fav song? i tried doing a cover song but Kuya is just not a good singer😭",
-      incorrect: "Oops! It's actually Golden Hour! not sure tho is this still your fav song? i tried doing a cover song but Kuya is just not a good singer😭"
+      correct:
+        "Correct! Not sure though—is this still your fav song? I tried doing a cover song but Kuya is just not a good singer😭",
+      incorrect:
+        "Oops! It's actually Golden Hour! Not sure though—is this still your fav song? I tried doing a cover song but Kuya is just not a good singer😭"
     }
   },
   {
@@ -16,7 +18,7 @@ const questions = [
     options: ["Naruto", "Dragon Ball", "My Hero Academia", "One Piece"],
     correct: "My Hero Academia",
     messages: {
-      correct: "Correct! ",
+      correct: "Correct! Good anime, though I don't like the ships tho😵‍💫",
       incorrect: "Not quite! It's My Hero Academia."
     }
   },
@@ -25,13 +27,15 @@ const questions = [
     options: ["Reading", "Dancing", "Drawing", "Singing"],
     correct: "Drawing",
     messages: {
-      correct: "Correct! have you been practicing your drawing skills? give kuya some tips😭",
-      incorrect: "No, its Drawing isnt it? have you been practicing your drawing skills? give kuya some tips😭"
+      correct:
+        "Correct! Have you been practicing your drawing skills? Give Kuya some tips😭",
+      incorrect:
+        "No, it's Drawing, isn't it? Have you been practicing your drawing skills? Give Kuya some tips😭"
     }
   }
 ];
 
-const QuizGame = () => {
+const QuizGame = ({ onClose }) => {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const [showFeedback, setShowFeedback] = useState(false);
@@ -71,6 +75,12 @@ const QuizGame = () => {
   return (
     <div className="quiz-overlay">
       <div className="quiz-container">
+        {/* Close Button */}
+        {onClose && (
+          <button className="close-button" onClick={onClose}>
+            &times;
+          </button>
+        )}
         {!quizComplete ? (
           <div className="quiz-card">
             <h2>{currentQuestion.question}</h2>
@@ -104,7 +114,9 @@ const QuizGame = () => {
         ) : (
           <div className="quiz-card">
             <h2>Quiz Complete!</h2>
-            <p>Your score: {score} / {questions.length}</p>
+            <p>
+              Your score: {score} / {questions.length}
+            </p>
             <button className="restart-button" onClick={restartQuiz}>
               Play Again
             </button>

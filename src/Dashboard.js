@@ -1,6 +1,7 @@
 import React, { useState, useRef } from 'react';
 import './styles/Dashboard.css';
 import backgroundMusic from './assets/golden-hour-8-bit_bgmusic.mp3';
+import buttonClickSound from './assets/button-click.wav';
 
 // Import images from your assets
 import calculatorImg from './assets/icons8-calculator-64.png';
@@ -24,23 +25,35 @@ function Dashboard() {
   const [activeTool, setActiveTool] = useState(null);
   const [muted, setMuted] = useState(false);
   const audioRef = useRef(null);
+  const clickAudioRef = useRef(null); // Ref for the button click sound
+
+  const playClickSound = () => {
+    if (clickAudioRef.current) {
+      clickAudioRef.current.currentTime = 0;
+      clickAudioRef.current.play();
+    }
+  };
 
   const handleToolsClick = (e) => {
     e.preventDefault();
+    playClickSound();
     setIsModalOpen(true);
     setActiveTool(null);
   };
 
   const handleCloseModal = () => {
+    playClickSound();
     setIsModalOpen(false);
     setActiveTool(null);
   };
 
   const handleSelectTool = (tool) => {
+    playClickSound();
     setActiveTool(tool);
   };
 
   const handleToggleMute = () => {
+    playClickSound();
     if (audioRef.current) {
       audioRef.current.muted = !muted;
       setMuted(!muted);
@@ -48,6 +61,7 @@ function Dashboard() {
   };
 
   const handleMessageClick = () => {
+    playClickSound();
     // Navigate back to Home.js (assuming home is served at '/')
     window.location.href = '/';
   };
@@ -57,12 +71,21 @@ function Dashboard() {
       {/* Background Music */}
       <audio ref={audioRef} src={backgroundMusic} autoPlay loop />
 
+      {/* Button click sound */}
+      <audio ref={clickAudioRef} src={buttonClickSound} preload="auto" />
+
       <div className="dashboard">
         {/* Menu Container */}
         <div className="menu-container">
           <ul className="menu">
             <li>
-              <a href="#" onClick={() => setActiveTool("memoryMatch")}>
+              <a
+                href="#"
+                onClick={() => {
+                  playClickSound();
+                  setActiveTool("memoryMatch");
+                }}
+              >
                 Start
               </a>
             </li>
@@ -109,12 +132,15 @@ function Dashboard() {
         {/* Render the active tool */}
         {activeTool === 'memoryMatch' && (
           <div className="tool-component">
-            <MemoryMatch onContinue={() => setActiveTool("quizGame")} />
+            <MemoryMatch
+              onContinue={() => setActiveTool("quizGame")}
+              onClose={() => setActiveTool(null)}
+            />
           </div>
         )}
         {activeTool === 'quizGame' && (
           <div className="tool-component">
-            <QuizGame />
+            <QuizGame onClose={() => setActiveTool(null)} />
           </div>
         )}
         {activeTool === 'calculator' && (

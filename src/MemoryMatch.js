@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "./styles/MemoryMatch.css";
 import album1 from "./assets/album1.jpg";
 import album2 from "./assets/album2.jpg";
 import album3 from "./assets/album3.jpg";
 import album4 from "./assets/album4.jpg";
+import cardClickSound from "./assets/button-click.wav"; // Your click sound file
 
 const cardImages = [
   { id: 1, src: album1 },
@@ -16,7 +17,7 @@ function shuffleArray(array) {
   return array.sort(() => Math.random() - 0.5);
 }
 
-const MemoryMatch = ({ onContinue }) => {
+const MemoryMatch = ({ onContinue, onClose }) => {
   const [cards, setCards] = useState([]);
   const [choiceOne, setChoiceOne] = useState(null);
   const [choiceTwo, setChoiceTwo] = useState(null);
@@ -25,6 +26,15 @@ const MemoryMatch = ({ onContinue }) => {
   const [matchedPairs, setMatchedPairs] = useState(0);
   const totalPairs = cardImages.length;
   const [gameOver, setGameOver] = useState(false);
+
+  const clickAudioRef = useRef(null);
+
+  const playClickSound = () => {
+    if (clickAudioRef.current) {
+      clickAudioRef.current.currentTime = 0;
+      clickAudioRef.current.play();
+    }
+  };
 
   useEffect(() => {
     startGame();
@@ -48,6 +58,7 @@ const MemoryMatch = ({ onContinue }) => {
   };
 
   const handleChoice = (card) => {
+    playClickSound();
     if (!disabled) {
       if (!choiceOne) {
         setChoiceOne(card);
@@ -89,7 +100,14 @@ const MemoryMatch = ({ onContinue }) => {
 
   return (
     <div className="memory-match-overlay">
+      {/* Audio element for card click sound */}
+      <audio ref={clickAudioRef} src={cardClickSound} preload="auto" />
       <div className="memory-match-container">
+        {onClose && (
+          <button className="close-button" onClick={onClose}>
+            &times; 
+          </button>
+        )}
         <h2>Memory Match Game</h2>
         <div className="card-grid">
           {cards.map((card) => (

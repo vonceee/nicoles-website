@@ -25,6 +25,7 @@
     text-align: center;
     font-family: 'Press Start 2P', cursive;
     color: #fff;
+    position: relative;
     animation: popIn 0.6s ease-out;
   }
   
@@ -48,9 +49,26 @@
     padding: 20px;
   }
   
-  .quiz-card h2 {
-    font-size: 28px;
-    margin-bottom: 20px;
+  /* Close Button Styling */
+  .close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #fff;
+    color: #ff66b2;
+    border: none;
+    padding: 5px 10px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+  }
+  
+  .close-button:hover {
+    background: rgba(255, 255, 255, 0.8);
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(255, 102, 178, 0.8);
   }
   
   /* Options grid */
@@ -61,7 +79,7 @@
     margin: 20px 0;
   }
   
-  /* Option buttons with retro, pixelated style */
+  /* Option buttons with a retro, pixelated style */
   .option-button {
     padding: 14px 24px;
     font-size: 22px;
@@ -71,7 +89,7 @@
     background: linear-gradient(45deg, #ff66b2, #ff3388);
     color: #fff;
     border: 3px solid #fff;
-    border-radius: 0;  /* Pixelated style */
+    border-radius: 0;
     cursor: pointer;
     transition: transform 0.2s, background 0.3s, box-shadow 0.3s;
     box-shadow: 2px 2px 0px #ffccff;
@@ -89,7 +107,7 @@
     cursor: default;
   }
   
-  /* Feedback message with retro contrast */
+  /* Feedback message styling */
   .feedback-message {
     margin: 20px 0;
     font-size: 18px;
