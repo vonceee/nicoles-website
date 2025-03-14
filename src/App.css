@@ -1,38 +1,144 @@
-.App {
-  text-align: center;
+body {
+  margin: 0;
+  background: url("./assets/kenney-background.png") no-repeat center center fixed;
+  background-size: cover;
+  font-family: "Press Start 2P", cursive;
+  position: relative;
+  overflow: hidden;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Dim the background */
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: -1;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.container {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  height: 80vh;
 }
 
-.App-link {
-  color: #61dafb;
+/* Envelope Styling */
+.envelope {
+  width: 450px;
+  image-rendering: pixelated;
+  transition: transform 0.3s ease;
+  cursor: pointer;
 }
 
-@keyframes App-logo-spin {
+.envelope:hover {
+  transform: scale(1.1);
+}
+
+/* Envelope shakes slightly before opening */
+.envelope.closed {
+  animation: shake 0.5s ease infinite alternate;
+}
+
+@keyframes shake {
+  0% {
+    transform: rotate(-2deg);
+  }
+  100% {
+    transform: rotate(2deg);
+  }
+}
+
+/* Letter Slides Out */
+.letter {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translateX(-50%) translateY(50px);
+  width: 70%;
+  max-width: 600px;
+  background: #fff;
+  background-size: cover;
+  padding: 20px;
+  border: 4px solid #000;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  font-family: 'Georgia', serif;  font-size: 16px;
+  color: #2c2c2c;
+  line-height: 1.6;
+  text-align: justify;
+  opacity: 0;
+  animation: slideOut 0.8s ease 0.3s forwards;
+}
+
+/* Slide Animation */
+@keyframes slideOut {
   from {
-    transform: rotate(0deg);
+    opacity: 0;
+    transform: translateX(-50%) translateY(50px);
   }
   to {
-    transform: rotate(360deg);
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+/* Greeting Style */
+.greeting {
+  font-size: 24px;
+  font-weight: bold;
+  color: #e91e63;
+}
+
+/* Signature Style */
+.signature {
+  font-family: 'Merriweather', serif;  font-size: 18px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #444;
+}
+
+/* Glow Effect on Continue Button */
+.continue-label {
+  margin-top: 20px;
+  font-size: 18px;
+  font-family: "Press Start 2P";
+  text-align: center;
+  color: #000;
+  cursor: pointer;
+  animation: blink 1s infinite;
+}
+
+@keyframes glow {
+  0% {
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+  }
+  100% {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 1);
+  }
+}
+
+/* Click to Open Label */
+.label {
+  margin-top: 10px;
+  font-size: 18px;
+  color: #fff;
+  animation: blink 1s infinite;
+  text-align: center;
+  width: 100%;
+}
+
+@keyframes blink {
+  0%,
+  50%,
+  100% {
+    opacity: 1;
+  }
+  25%,
+  75% {
+    opacity: 0;
   }
 }

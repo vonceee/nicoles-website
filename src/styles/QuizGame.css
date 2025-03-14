@@ -1,0 +1,79 @@
+.quiz-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background: linear-gradient(135deg, #ff99cc, #ff66b2);
+    border: 3px solid #fff;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(255, 102, 178, 0.8);
+    text-align: center;
+    font-family: 'Press Start 2P', cursive;
+    color: #fff;
+  }
+  
+  .quiz-card {
+    padding: 20px;
+  }
+  
+  .quiz-card h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+  
+  .options {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin: 20px 0;
+  }
+  
+  .option-button {
+    padding: 12px 20px;
+    font-size: 20px;
+    background: rgba(255, 255, 255, 0.3);
+    border: 2px solid #fff;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.3s, box-shadow 0.3s;
+  }
+  
+  .option-button:hover {
+    background: rgba(255, 255, 255, 0.5);
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(255, 102, 178, 0.8);
+  }
+  
+  .selected {
+    background: rgba(255, 255, 255, 0.8);
+    cursor: default;
+  }
+  
+  .feedback-message {
+    margin: 20px 0;
+    font-size: 18px;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+    color: #fff;
+    font-family: 'Verdana', sans-serif;
+  }
+  
+  .next-button,
+  .restart-button {
+    padding: 12px 20px;
+    font-size: 20px;
+    background: #fff;
+    color: #ff66b2;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.3s, box-shadow 0.3s;
+  }
+  
+  .next-button:hover,
+  .restart-button:hover {
+    background: rgba(255, 255, 255, 0.8);
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(255, 102, 178, 0.8);
+  }
+  

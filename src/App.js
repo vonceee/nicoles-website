@@ -1,23 +1,21 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import Home from './Home';
+import Dashboard from './Dashboard';
 
 function App() {
+  // Use state to track which "page" to show
+  const [currentPage, setCurrentPage] = useState('home');
+
+  // Function to navigate to Dashboard
+  const goToDashboard = () => {
+    setCurrentPage('dashboard');
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      {currentPage === 'home' && <Home onContinue={goToDashboard} />}
+      {currentPage === 'dashboard' && <Dashboard />}
     </div>
   );
 }

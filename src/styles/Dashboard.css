@@ -1,0 +1,214 @@
+/* Global styles for Dashboard component */
+.dashboard {
+    margin: 0;
+    font-family: 'Press Start 2P', cursive;
+    background: url('../assets/kenney-background.png') no-repeat center center fixed;
+    background-size: cover;
+    position: relative;
+    color: #fff;
+    min-height: 100vh;
+  }
+  
+  /* Dim the background */
+  .dashboard::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: -1;
+  }
+  
+  /* Menu container with flair */
+  .menu-container {
+    position: fixed;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+    width: 320px;
+    background: linear-gradient(135deg, #ff99cc, #ff66b2);
+    border: 3px solid #fff;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 0 20px rgba(255, 102, 178, 0.8);
+    animation: pulse 2s infinite;
+  }
+  
+  @keyframes pulse {
+    0% { box-shadow: 0 0 20px rgba(255, 102, 178, 0.8); }
+    50% { box-shadow: 0 0 40px rgba(255, 102, 178, 1); }
+    100% { box-shadow: 0 0 20px rgba(255, 102, 178, 0.8); }
+  }
+  
+  .menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .menu li {
+    margin: 20px 0;
+  }
+  
+  .menu li a {
+    display: block;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 15px;
+    color: #fff;
+    border: 2px solid #fff;
+    border-radius: 8px;
+    transition: transform 0.3s, background 0.3s, box-shadow 0.3s;
+    position: relative;
+    text-align: left;
+  }
+  
+  .menu li a:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.05);
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5);
+  }
+  
+  /* Animated underline effect on hover */
+  .menu li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0;
+    height: 3px;
+    background: #fff;
+    transition: width 0.3s;
+  }
+  
+  .menu li a:hover::after {
+    width: 100%;
+  }
+  
+  /* Modal for the toolbar */
+  .toolbar-modal {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 100;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .toolbar-content {
+    background: linear-gradient(135deg, #ff99cc, #ff66b2);
+    border: 3px solid #fff;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 0 20px rgba(255,102,178,0.8);
+    animation: pulse 2s infinite;
+    width: 80%;
+    max-width: 500px;
+    text-align: center;
+    position: relative;
+  }
+  
+  .toolbar-content h2 {
+    margin-top: 0;
+    font-size: 24px;
+  }
+  
+  .close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 28px;
+    color: #fff;
+    cursor: pointer;
+    transition: transform 0.2s, color 0.3s;
+  }
+
+  .close-button:hover {
+    transform: scale(1.2);
+    color: #ffcccc;
+  }
+  
+  /* TOOL ICON BUTTONS - Pink Clash of Clans Style with Extra Flare for Buttons */
+  .tool-icons {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+    padding: 0 8px;
+  }
+  
+  .tool-icons button {
+    /* Remove default button styles */
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    flex: 1;
+    margin: 0 10px;
+    position: relative;
+    overflow: hidden;
+    
+    /* Shape & Pink Gradient */
+    border-radius: 12px;
+    border: 2px solid #ff66b2;
+    background: linear-gradient(to bottom, #ffcce5 0%, #ff99cc 100%);
+    
+    /* 3D Effect: Inset & Drop Shadow */
+    box-shadow:
+      inset 0 3px 5px rgba(0, 0, 0, 0.2),
+      0 2px 3px rgba(0, 0, 0, 0.4);
+    
+    /* Transition for scale & box-shadow */
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  /* Shimmer effect pseudo-element for buttons */
+  .tool-icons button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -75%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(
+      120deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.4) 50%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    transform: skewX(-20deg);
+    transition: all 0.7s ease-in-out;
+  }
+  
+  /* Center the icon image within the button */
+  .tool-icons button img {
+    display: block;
+    margin: 0 auto;
+    width: 70px;
+    height: 70px;
+    image-rendering: pixelated;
+  }
+  
+  /* Hover: Scale up, deepen shadows, add pink glow, and move shimmer */
+  .tool-icons button:hover {
+    transform: scale(1.1);
+    box-shadow:
+      inset 0 4px 6px rgba(0, 0, 0, 0.3),
+      0 4px 6px rgba(0, 0, 0, 0.5),
+      0 0 10px #ff66b2;
+  }
+  
+  .tool-icons button:hover::before {
+    left: 125%;
+  }
+  
+  
+  
+  
