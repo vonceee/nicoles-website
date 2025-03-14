@@ -112,9 +112,6 @@ const MemoryMatch = ({ onContinue }) => {
           ))}
         </div>
         <p>Turns: {turns}</p>
-        <button className="restart-button" onClick={startGame}>
-          Restart Game
-        </button>
       </div>
 
       {gameOver && (

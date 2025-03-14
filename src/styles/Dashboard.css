@@ -208,6 +208,34 @@
   .tool-icons button:hover::before {
     left: 125%;
   }
+
+  .volume-button {
+    background: none;
+    border: 2px solid #fff;
+    border-radius: 8px;
+    padding: 8px 12px;
+    width: 50px;   /* Adjust width as needed */
+    height: 50px;  /* Adjust height as needed */
+    color: #fff;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .volume-button:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.05);
+  }
+  
+  /* Adjust the size of the icon inside the button */
+  .volume-icon {
+    width: 24px;  /* Adjust icon width */
+    height: 24px; /* Adjust icon height */
+  }
+  
+  
   
   
   

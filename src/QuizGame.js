@@ -3,33 +3,32 @@ import "./styles/QuizGame.css";
 
 const questions = [
   {
-    question: "What is Princess's favorite color?",
-    options: ["Pink", "Blue", "Green", "Yellow"],
-    correct: "Pink",
+    question: "What is Princess's favorite song?",
+    options: ["Golden Hour", "Song 2", "Imagine", "Bohemian Rhapsody"],
+    correct: "Golden Hour",
     messages: {
-      correct: "That's right! Princess adores pink!",
-      incorrect: "Oops! Try again—she loves pink!"
+      correct: "Correct! not sure tho is this still your fav song? i tried doing a cover song but Kuya is just not a good singer😭",
+      incorrect: "Oops! It's actually Golden Hour! not sure tho is this still your fav song? i tried doing a cover song but Kuya is just not a good singer😭"
     }
   },
   {
-    question: "What subject does Princess excel at?",
-    options: ["Math", "Science", "Art", "History"],
-    correct: "Art",
+    question: "What is her favorite anime?",
+    options: ["Naruto", "Dragon Ball", "My Hero Academia", "One Piece"],
+    correct: "My Hero Academia",
     messages: {
-      correct: "Exactly! Her creativity shines in Art!",
-      incorrect: "Not quite—she's truly gifted in Art!"
+      correct: "Correct! ",
+      incorrect: "Not quite! It's My Hero Academia."
     }
   },
   {
-    question: "Which snack is Princess’s favorite?",
-    options: ["Chips", "Cookies", "Fruit", "Candy"],
-    correct: "Candy",
+    question: "What is Princess's favorite hobby?",
+    options: ["Reading", "Dancing", "Drawing", "Singing"],
+    correct: "Drawing",
     messages: {
-      correct: "Correct! Candy is her sweet delight!",
-      incorrect: "Nope, you gotta know—she loves Candy!"
+      correct: "Correct! have you been practicing your drawing skills? give kuya some tips😭",
+      incorrect: "No, its Drawing isnt it? have you been practicing your drawing skills? give kuya some tips😭"
     }
-  },
-  // Add additional questions as needed
+  }
 ];
 
 const QuizGame = () => {
@@ -70,46 +69,48 @@ const QuizGame = () => {
   };
 
   return (
-    <div className="quiz-container">
-      {!quizComplete ? (
-        <div className="quiz-card">
-          <h2>{currentQuestion.question}</h2>
-          <div className="options">
-            {currentQuestion.options.map((option, index) => (
-              <button
-                key={index}
-                className={`option-button ${
-                  selectedAnswer === option ? "selected" : ""
-                }`}
-                onClick={() => handleOptionClick(option)}
-                disabled={selectedAnswer !== null}
-              >
-                {option}
-              </button>
-            ))}
-          </div>
-          {showFeedback && (
-            <div className="feedback-message">
-              {selectedAnswer === currentQuestion.correct
-                ? currentQuestion.messages.correct
-                : currentQuestion.messages.incorrect}
+    <div className="quiz-overlay">
+      <div className="quiz-container">
+        {!quizComplete ? (
+          <div className="quiz-card">
+            <h2>{currentQuestion.question}</h2>
+            <div className="options">
+              {currentQuestion.options.map((option, index) => (
+                <button
+                  key={index}
+                  className={`option-button ${
+                    selectedAnswer === option ? "selected" : ""
+                  }`}
+                  onClick={() => handleOptionClick(option)}
+                  disabled={selectedAnswer !== null}
+                >
+                  {option}
+                </button>
+              ))}
             </div>
-          )}
-          {selectedAnswer && (
-            <button className="next-button" onClick={handleNextQuestion}>
-              Next Question
+            {showFeedback && (
+              <div className="feedback-message">
+                {selectedAnswer === currentQuestion.correct
+                  ? currentQuestion.messages.correct
+                  : currentQuestion.messages.incorrect}
+              </div>
+            )}
+            {selectedAnswer && (
+              <button className="next-button" onClick={handleNextQuestion}>
+                Next Question
+              </button>
+            )}
+          </div>
+        ) : (
+          <div className="quiz-card">
+            <h2>Quiz Complete!</h2>
+            <p>Your score: {score} / {questions.length}</p>
+            <button className="restart-button" onClick={restartQuiz}>
+              Play Again
             </button>
-          )}
-        </div>
-      ) : (
-        <div className="quiz-card">
-          <h2>Quiz Complete!</h2>
-          <p>Your score: {score} / {questions.length}</p>
-          <button className="restart-button" onClick={restartQuiz}>
-            Play Again
-          </button>
-        </div>
-      )}
+          </div>
+        )}
+      </div>
     </div>
   );
 };
