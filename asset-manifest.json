@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/vonceee/nicoles-website.git/static/css/main.02c218ba.css",
+    "main.js": "/vonceee/nicoles-website.git/static/js/main.8e2fb211.js",
+    "static/js/453.830350d2.chunk.js": "/vonceee/nicoles-website.git/static/js/453.830350d2.chunk.js",
+    "static/media/8bits.mp3": "/vonceee/nicoles-website.git/static/media/8bits.e6fdd53aaef63aacfa8a.mp3",
+    "static/media/pic4.jpg": "/vonceee/nicoles-website.git/static/media/pic4.fd359a6d89c53eee4cbf.jpg",
+    "static/media/opening-sound.mp3": "/vonceee/nicoles-website.git/static/media/opening-sound.6c7deeefeb9f513d8c12.mp3",
+    "static/media/pic2.jpg": "/vonceee/nicoles-website.git/static/media/pic2.8ba9858c8a94b9afdd63.jpg",
+    "static/media/pic1.jpg": "/vonceee/nicoles-website.git/static/media/pic1.6734836174494e797d44.jpg",
+    "static/media/pic3.jpg": "/vonceee/nicoles-website.git/static/media/pic3.3dfeb7c584cfd0cddb73.jpg",
+    "static/media/button-click.wav": "/vonceee/nicoles-website.git/static/media/button-click.ae2de8e7e136703f3626.wav",
+    "static/media/kenney-background.png": "/vonceee/nicoles-website.git/static/media/kenney-background.374f0a50a9ed7bffcdc8.png",
+    "index.html": "/vonceee/nicoles-website.git/index.html",
+    "main.02c218ba.css.map": "/vonceee/nicoles-website.git/static/css/main.02c218ba.css.map",
+    "main.8e2fb211.js.map": "/vonceee/nicoles-website.git/static/js/main.8e2fb211.js.map",
+    "453.830350d2.chunk.js.map": "/vonceee/nicoles-website.git/static/js/453.830350d2.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.02c218ba.css",
+    "static/js/main.8e2fb211.js"
+  ]
+}
