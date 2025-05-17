@@ -4,10 +4,9 @@ import Home from './Home';
 import Dashboard from './Dashboard';
 
 function App() {
-  // Use state to track which "page" to show
+  // state to track which "page" to show
   const [currentPage, setCurrentPage] = useState('home');
 
-  // Function to navigate to Dashboard
   const goToDashboard = () => {
     setCurrentPage('dashboard');
   };

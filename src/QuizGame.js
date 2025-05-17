@@ -3,34 +3,34 @@ import "./styles/QuizGame.css";
 
 const questions = [
   {
-    question: "What is Princess's favorite song?",
-    options: ["Golden Hour", "Song 2", "Imagine", "Bohemian Rhapsody"],
-    correct: "Golden Hour",
+    question: "When is Nicole & Johncenn's anniversary?",
+    options: ["November 21, 2015", "September 7, 2015", "September 10, 2015", "August 14, 2015"],
+    correct: "September 7, 2015",
     messages: {
       correct:
-        "Correct! Not sure though—is this still your fav song? I tried doing a cover song but Kuya is just not a good singer😭",
+        "Correct! Grabe, It's been 9 years already, time flies so fast! and i love you still~ 💓",
       incorrect:
-        "Oops! It's actually Golden Hour! Not sure though—is this still your fav song? I tried doing a cover song but Kuya is just not a good singer😭"
+        "Oops! It's actually September 7! Nicole specifically chose to say YES on the day 7 as it is God's number. 💓"
     }
   },
   {
-    question: "What is her favorite anime?",
-    options: ["Naruto", "Dragon Ball", "My Hero Academia", "One Piece"],
-    correct: "My Hero Academia",
+    question: "What is Nicole & Johncenn's Go To Duet in Karaoke?",
+    options: ["My Way", "Breaking Free", "Always Remember Us This Way", "Way Back Into Love"],
+    correct: "Way Back Into Love",
     messages: {
-      correct: "Correct! Good anime, though I don't like the ships tho😵‍💫",
-      incorrect: "Not quite! It's My Hero Academia."
+      correct: "Correct! We spent hours singing & practicing this song together! 🎤",
+      incorrect: "Not quite! HAHA It's way back into love. We spent hours singing this song together! 🎤"
     }
   },
   {
-    question: "What is Princess's favorite hobby?",
-    options: ["Reading", "Dancing", "Drawing", "Singing"],
-    correct: "Drawing",
+    question: "What is Nicole & Johncenn's Favorite Bonding Together?",
+    options: ["Praying", "Eating", "Watching Movies", "👀👀"],
+    correct: "Praying",
     messages: {
       correct:
-        "Correct! Have you been practicing your drawing skills? Give Kuya some tips😭",
+        "Correct! Actually, ALL OF THE ABOVE! But our most favorite is praying together. 💓",
       incorrect:
-        "No, it's Drawing, isn't it? Have you been practicing your drawing skills? Give Kuya some tips😭"
+        "Not quite! Actually, ALL OF THE ABOVE! But our most favorite is praying together. 💓"
     }
   }
 ];

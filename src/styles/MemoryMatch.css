@@ -1,4 +1,4 @@
-.memory-match-overlay {
+  .memory-match-overlay {
     position: fixed;
     top: 0;
     left: 0;
@@ -13,6 +13,10 @@
   }
   
   .memory-match-container {
+    width: 600px;
+    min-height: 400px;
+    max-height: 80vh;
+    overflow-y: auto;
     text-align: center;
     color: #fff;
     font-family: 'Press Start 2P', cursive;
@@ -21,32 +25,10 @@
     border: 3px solid #fff;
     border-radius: 12px;
     box-shadow: 0 0 20px rgba(255, 102, 178, 0.8);
-    max-width: 600px;
     margin: 20px auto;
     position: relative;
   }
   
-  .close-memory-button {
-    position: absolute;
-    top: -20px;
-    right: -20px;
-    background: #fff;
-    color: #ff66b2;
-    border: none;
-    border-radius: 8px;
-    padding: 8px 12px;
-    font-size: 24px;
-    cursor: pointer;
-    transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
-  }
-  
-  .close-memory-button:hover {
-    background: rgba(255, 255, 255, 0.8);
-    transform: scale(1.1);
-    box-shadow: 0 0 10px rgba(255, 102, 178, 0.8);
-  }
-  
-  /* Rest of your styles remain unchanged */
   .card-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -163,4 +145,3 @@
       transform: scale(1);
     }
   }
-  

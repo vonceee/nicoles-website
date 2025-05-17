@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 import './styles/Dashboard.css';
-import backgroundMusic from './assets/golden-hour-8-bit_bgmusic.mp3';
+import backgroundMusic from './assets/8bits.mp3';
 import buttonClickSound from './assets/button-click.wav';
 
 // Import images from your assets

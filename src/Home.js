@@ -19,7 +19,7 @@ function Home({ onContinue }) {
     <div className="container">
       {/* Audio element for the envelope opening sound */}
       <audio ref={audioRef} src={openingSound} preload="auto" />
-      
+
       {!opened ? (
         <div className="envelope-container" onClick={handleEnvelopeClick}>
           <img
@@ -39,21 +39,18 @@ function Home({ onContinue }) {
           <div className="letter">
             <p className="message">
               <span className="greeting">
-                Happy 12th Birthday, Princess! 🎉🥳
+                Happy 9 years and 9 months, mahal Johncenn! 🥰🎉🥳
               </span>
               <br /><br />
-              Yo sis, happy birthday how you doin? I hope you're doing well, you
-              grow up so fast—you’re like so tall na, even taller than Ate! 😆
-              Sorry, medyo busy sa school si Kuya. Chat mo ko minsan di ka na nagcha-chat, imissyou. 
-              Keep up the good work in school—I'm proud of you! I'm here if you need help. 
-              Hope makapag-bonding us soon😩. Here's a simple game hope you like it. Btw this only works on laptop or pc i didnt design it for phone xD.
+              Almost a decade of love, laughter, and everything in between! 💖 I just want to let you know
+              that I am so grateful for you and everything that you do. As alwasys, you are my rock, my partner, and my best friend. I love you so much! 💕
               <br /><br />
-              Kuya loves you always! XOXO ❤️ Take care and enjoy your day! 🎂🎁
+              You deserve all the good things that life has to offer! ❤️
               <br /><br />
-              <span className="signature">~ Kuya</span>
+              <span className="signature">~ Take care, Mahal Nicole 😘</span>
             </p>
-            <div className="continue-label" onClick={onContinue}>
-              Continue
+            <div className="continue-label" onClick={onContinue} style={{ color: 'pink' }}>
+              Next Chapter
             </div>
           </div>
         </div>

@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./styles/MemoryMatch.css";
-import album1 from "./assets/album1.jpg";
-import album2 from "./assets/album2.jpg";
-import album3 from "./assets/album3.jpg";
-import album4 from "./assets/album4.jpg";
-import cardClickSound from "./assets/button-click.wav"; // Your click sound file
+import album1 from "./assets/pic1.jpg";
+import album2 from "./assets/pic2.jpg";
+import album3 from "./assets/pic3.jpg";
+import album4 from "./assets/pic4.jpg";
+import cardClickSound from "./assets/button-click.wav";
 
 const cardImages = [
   { id: 1, src: album1 },
@@ -100,15 +100,12 @@ const MemoryMatch = ({ onContinue, onClose }) => {
 
   return (
     <div className="memory-match-overlay">
-      {/* Audio element for card click sound */}
       <audio ref={clickAudioRef} src={cardClickSound} preload="auto" />
       <div className="memory-match-container">
         {onClose && (
-          <button className="close-button" onClick={onClose}>
-            &times; 
-          </button>
+          <button className="close-button" onClick={onClose}>&times;</button>
         )}
-        <h2>Memory Match Game</h2>
+        <h2>Memory Match</h2>
         <div className="card-grid">
           {cards.map((card) => (
             <div
