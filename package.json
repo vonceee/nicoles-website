@@ -1,7 +1,7 @@
 {
   "name": "birthday-website",
   "version": "0.1.0",
-  "homepage": "https://vonceee.github.io/hbd-princess",
+  "homepage": "https://vonceee.github.io/nicoles-website",
   "private": true,
   "dependencies": {
     "@testing-library/dom": "^10.4.0",
